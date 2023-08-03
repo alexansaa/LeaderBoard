@@ -1,6 +1,6 @@
 export default class Score {
   static scores = [];
-  
+
   static defaultData = [
     {
       name: 'Alex',
