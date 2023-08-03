@@ -5,6 +5,9 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
+    scores: {
+      import: './src/Score.js',
+    },
   },
   devServer: {
     static: './dist',
@@ -18,7 +21,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: '/',
+    publicPath: '',
   },
   optimization: {
     runtimeChunk: 'single',

@@ -2,8 +2,9 @@
   "name": "leaderboard",
   "version": "1.0.0",
   "description": "This is the leaderboard project",
-  "private": "true",
+  "private": true,
   "scripts": {
+    "predeploy": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "webpack server --open",

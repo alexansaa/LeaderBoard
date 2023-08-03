@@ -128,6 +128,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/Score.js":
+/*!**********************!*\
+  !*** ./src/Score.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Score)\n/* harmony export */ });\nclass Score {\r\n  static scores = [\r\n    {\r\n      name: 'Alex',\r\n      score: 150,\r\n      index: 1\r\n    },\r\n    {\r\n      name: 'Juan',\r\n      score: 120,\r\n      index: 2\r\n    }\r\n  ];\r\n\r\n  constructor(name, score, index = null) {\r\n    let newIndex = 0;\r\n    if (index === null) {\r\n      if (Score.scores.length === 0) {\r\n        newIndex = 1;\r\n      } else {\r\n        newIndex = Score.scores[Score.scores.length - 1].index + 1;\r\n      }\r\n    } else {\r\n      newIndex = index;\r\n    }\r\n\r\n    this.name = name;\r\n    this.score = score;\r\n    this.index = index;\r\n  }\r\n\r\n  static updateData() {\r\n    localStorage.setItem('scores', JSON.stringify(Score.scores));\r\n  }\r\n\r\n  static loadData() {\r\n    const tmpData = JSON.parse(localStorage.getItem('scores'));\r\n    if (tmpData === null || tmpData.length === 0) {\r\n      //Score.scores = [];\r\n    }\r\n    Score.updateData();\r\n  }\r\n\r\n}\n\n//# sourceURL=webpack://leaderboard/./src/Score.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -135,7 +146,18 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\r\n\r\nfunction component() {\r\n    const element = document.createElement('div');\r\n  \r\n    // Lodash, now imported bu this script\r\n    element.innerHTML = lodash__WEBPACK_IMPORTED_MODULE_0___default().join(['Hello', 'webpack'], ' ');\r\n    element.classList.add('hello');\r\n  \r\n    return element;\r\n  }\r\n  \r\n  document.body.appendChild(component());\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _Score_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Score.js */ \"./src/Score.js\");\n/* harmony import */ var _renderScores_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./renderScores.js */ \"./src/renderScores.js\");\n\r\n\r\n\r\n\r\n\r\n_Score_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].loadData();\r\n\r\n(0,_renderScores_js__WEBPACK_IMPORTED_MODULE_3__.renderFunction)(_Score_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].scores);\r\n\r\n// function component() {\r\n\r\n\r\n\r\n//   const element = document.createElement('div');\r\n\r\n//   // Lodash, now imported bu this script\r\n//   element.innerHTML = _.join(['Hello', 'webpack'], ' ');\r\n//   element.classList.add('hello');\r\n\r\n//   return element;\r\n// }\r\n\r\n//document.body.appendChild(component());\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/renderScores.js":
+/*!*****************************!*\
+  !*** ./src/renderScores.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   renderFunction: () => (/* binding */ renderFunction),\n/* harmony export */   scoreCtn: () => (/* binding */ scoreCtn)\n/* harmony export */ });\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nconst scoreCtn = document.querySelector('#scoresTable');\r\n\r\nconst renderFunction = (JsonObjectArray) => {\r\n\tscoreCtn.innerHTML = '';\r\n\tif (JsonObjectArray === null || JsonObjectArray.length === 0) {\r\n\t\treturn;\r\n\t}\r\n\tJsonObjectArray.array.forEach(element => {\r\n\t\tconst scrElmnt = document.createElement('div');\r\n\r\n\t\tconst content = document.createElement('p');\r\n\t\tcontent.textContent = `${element.name}` + `${element.score}`;\r\n\r\n\t\tscrElmnt.appendChild(content);\r\n\t});\r\n};\n\n//# sourceURL=webpack://leaderboard/./src/renderScores.js?");
 
 /***/ })
 

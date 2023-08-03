@@ -1,3 +1,7 @@
-.hello {
-    color: red;
-  }
+.element:nth-child(even) {
+  background-color: rgb(213, 216, 218);
+}
+
+.element p {
+  margin: 0;
+}
