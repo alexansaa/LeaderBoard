@@ -1,7 +1,8 @@
 import './style.css';
 import Scores from './Score.js';
 import { renderFunction } from './renderScores.js';
-
-Scores.loadData();
+import clik from './editItems.js';
 
 renderFunction(Scores.scores);
+
+clik();
