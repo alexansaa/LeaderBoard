@@ -1,6 +1,6 @@
+import _ from 'lodash';
 import { doGet, doPost } from './webRequest.js';
 import { renderFunction } from './renderScores.js';
-import { subtract } from 'lodash';
 import Score from './Score.js';
 
 const refreshBtn = document.querySelector('#refeshData');
