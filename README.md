@@ -102,13 +102,21 @@ cd your folder name
 
 ### Install
 
-You won't need further instalation
+```
+npm install
+
+npm start
+```
 
 ### Usage
 
 To run the project, execute the following command:
 
-Double-click on the index file (dist/index.html)
+```
+npm server start
+```
+
+then you can find the loaded page locally in http://localhost:3000
 
 ### Run tests
 
