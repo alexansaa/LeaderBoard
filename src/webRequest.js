@@ -1,10 +1,8 @@
-export const doGet = (url) =>
-  fetch(url)
+export const doGet = (url) => fetch(url)
     .then((response) => response.json())
     .then((json) => json);
 
-export const doPost = (url, payload) =>
-  fetch(url, {
+export const doPost = (url, payload) => fetch(url, {
     method: 'POST',
     body: JSON.stringify(payload),
     headers: {
