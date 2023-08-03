@@ -7,12 +7,11 @@ export const renderFunction = (JsonObjectArray) => {
 	if (JsonObjectArray === null || JsonObjectArray.length === 0) {
 		return;
 	}
-	JsonObjectArray.forEach(element => {
+	JsonObjectArray.forEach((element) => {
 		const scrElmnt = document.createElement('div');
 		scrElmnt.classList.add('element');
 
 		const content = document.createElement('p');
-		console.log(element.name + element.score);
 		content.textContent = element.name + ': ' + element.score;
 
 		scrElmnt.appendChild(content);

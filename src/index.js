@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import './style.css';
 import Scores from './Score.js';
 import { renderFunction } from './renderScores.js';

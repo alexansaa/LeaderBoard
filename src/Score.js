@@ -4,13 +4,13 @@ export default class Score {
     {
       name: 'Alex',
       score: 150,
-      index: 1
+      index: 1,
     },
     {
       name: 'Juan',
       score: 120,
-      index: 2
-    }
+      index: 2,
+    },
   ];
 
   constructor(name, score, index = null) {
@@ -27,7 +27,7 @@ export default class Score {
 
     this.name = name;
     this.score = score;
-    this.index = index;
+    this.index = newIndex;
   }
 
   static updateData() {
@@ -41,5 +41,4 @@ export default class Score {
     }
     Score.updateData();
   }
-
 }
