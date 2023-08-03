@@ -12,7 +12,7 @@ export const renderFunction = (JsonObjectArray) => {
     scrElmnt.classList.add('element');
 
     const content = document.createElement('p');
-    content.textContent = _.join([element.name, ': ', element.score]);
+    content.textContent = _.join([element.name, ': ', element.score], '');
 
     scrElmnt.appendChild(content);
     scoreCtn.appendChild(scrElmnt);
